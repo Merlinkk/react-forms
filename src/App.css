@@ -60,3 +60,19 @@ input{
  background-color: white;
  color: #711DB0; 
 }
+
+#success{
+  background-color: rgb(5, 5, 5);
+  color: lime;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid lime;
+  padding: 20px 100px;
+  margin: 10px;
+  transition: background-color 0.7s;
+}
+
+#success:hover{
+  background-color: lime;
+  color: black;
+}

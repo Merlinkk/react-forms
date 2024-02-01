@@ -32,43 +32,45 @@ function Form() {
   return (
     <>
     <form action="" onSubmit={(e)=>{handleSubmit(e)}}>
-    {submit && valid ? <h1 style={{color:'lime'}}>Registration successful!</h1> : null}
 
         <h1>Registration Form</h1>
-        {submit && !valid && !field.firstName ? <h3 style={{color:'red'}}>First Name is required</h3> : null}
+    {submit && valid ? <span id='success'>Registration successful!</span> : null}
+    <br />
+    <br />
         <input placeholder='First Name' onChange={(e)=>{
             setField({
                 ...field,
                 firstName:e.target.value
             })
         }} id='firstName' type="text" value={field.firstName} />
+        {submit && !valid && !field.firstName ? <h3 style={{color:'red'}}>First Name is required</h3> : null}
         <br />
         <br />
-        {submit && !valid && !field.lastName ? <h3 style={{color:'red'}}>Last Name is required</h3> : null}
         <input placeholder='Last Name' onChange={(e)=>{
             setField({
                 ...field,
                 lastName:e.target.value
             })
         }}  id='lastName' type="text" value={field.lastName} />
+        {submit && !valid && !field.lastName ? <h3 style={{color:'red'}}>Last Name is required</h3> : null}
         <br />
         <br />
-        {submit && !valid && !field.email ? <h3 style={{color:'red'}}>Email is required</h3> : null}
         <input placeholder='Email' onChange={(e)=>{
             setField({
                 ...field,
                 email:e.target.value
             })
         }}  id='email' type="email" value={field.email} />
+        {submit && !valid && !field.email ? <h3 style={{color:'red'}}>Email is required</h3> : null}
         <br />
         <br />
-        {submit && !valid && !field.phone ? <h3 style={{color:'red'}}>Phone No: is required</h3> : null}
         <input placeholder='Phone No:' onChange={(e)=>{
             setField({
                 ...field,
                 phone:e.target.value
             })
         }}  id='phone' type="number" value={field.phone} />
+        {submit && !valid && !field.phone ? <h3 style={{color:'red'}}>Phone No: is required</h3> : null}
         <br />
         <br />
         <input id="submit" type="submit" defaultValue="Submit" />
